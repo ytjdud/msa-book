@@ -1,0 +1,17 @@
+dependencies {
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-actuator:3.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Cloud
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.0.2'
+    implementation 'org.springframework.cloud:spring-cloud-netflix-hystrix:2.2.10.RELEASE'
+
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    runtimeOnly 'com.h2database:h2'
+
+}
