@@ -39,6 +39,12 @@ subprojects {
 	targetCompatibility = '17'
 	compileJava.options.encoding = 'UTF-8'
 
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
 	repositories {
 		mavenLocal()
 		mavenCentral()
