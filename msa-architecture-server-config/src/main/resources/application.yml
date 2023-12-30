@@ -18,5 +18,5 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:9091/eureka/, http://localhost:9092/eureka/
+      defaultZone: http://localhost:9091/eureka/
     enabled: true

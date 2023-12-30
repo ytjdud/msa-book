@@ -1,0 +1,38 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: msa-architecture-server-gateway
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: msa-architecture-config-server
+      enabled: false
+    #      discovery:
+    #        service-id: 'msa-architecture-config-server'
+    #        enabled: true
+    gateway:
+      routes:
+        - id: coffeeOrder
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/coffeeOrder/**
+        - id: coffeeMember
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/coffeeMember/**
+        - id: coffeeStatus
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/coffeeStatus/**
+#Eureka Client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+    enabled: true
+  instance:
+    preferIpAddress: true
+    instance-id:
