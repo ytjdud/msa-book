@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
+
+import java.util.UUID;
 
 @Entity
 @Setter
@@ -14,11 +17,16 @@ import lombok.Setter;
 public class OrderEntityJPO extends OrderEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     String orderNumber; //주문번호
     String coffeeName; //커피 종류
     String coffeeCount; //커피 개수
     String customerName; //회원명
+
+    @Override
+    public String getId() {
+        return String.valueOf(id); // Long 값을 String으로 변환하여 반환
+    }
 }

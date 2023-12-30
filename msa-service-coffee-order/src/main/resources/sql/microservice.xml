@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot.repository.OrderEntityJPO">
+<!--
+CREATE TABLE ORDER_ENTITYJPO (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_number VARCHAR(255),
+    coffee_name VARCHAR(255),
+    coffee_count VARCHAR(255),
+    customer_name VARCHAR(255)
+);
+-->
+</mapper>

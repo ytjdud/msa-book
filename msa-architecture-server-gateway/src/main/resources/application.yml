@@ -19,7 +19,7 @@ spring:
           uri: http://localhost:8083/
           predicates:
             - Path=/coffeeOrder/**
-        - id: coffeeMember
+        - id: msa-service-coffee-member
           uri: http://localhost:8081/
           predicates:
             - Path=/coffeeMember/**
