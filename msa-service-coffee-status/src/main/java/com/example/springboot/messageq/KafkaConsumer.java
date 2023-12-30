@@ -12,7 +12,7 @@ public class KafkaConsumer {
     @Autowired
     ICoffeeStatusMapper iCoffeeStatusMapper;
 
-    @KafkaListener(topics = "seoyoung-kafka-test")
+    @KafkaListener(topics = "msa-service-coffee-status")
     public void processMessage(String kafkaMessage) {
         System.out.println("kafkaMessage : =====> " + kafkaMessage);
 
