@@ -1,0 +1,47 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: msa-service-coffee-order
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/./msa-book/msa-service-coffee-order
+    username: sa
+    password: '1234'
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: msa-architecture-config-server
+      enabled: false
+  kafka:
+    consumer:
+      group-id: my-test
+      enable-auto-commit: true
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 1000
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    template:
+      default-topic: msa-service-coffee-status
+    bootstrap-servers: localhost:9094
+    zipkin:
+      sender:
+        type: kafka
+
+#Eureka Client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+    enabled: true
+  instance:
+    preferIpAddress: true
+    instance-id:

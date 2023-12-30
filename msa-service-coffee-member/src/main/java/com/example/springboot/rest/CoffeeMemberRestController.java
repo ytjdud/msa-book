@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RefreshScope
 @RestController
+@RequestMapping("/coffeeMember")
 public class CoffeeMemberRestController {
 
     @Autowired
@@ -22,7 +23,7 @@ public class CoffeeMemberRestController {
         MemberDVO memberDVO = new MemberDVO();
         memberDVO.setMemberName(memberName);
 
-        if(iCoffeeMemberMapper.existsByMemberName(memberDVO).getMemberName().isEmpty()){
+        if(iCoffeeMemberMapper.existsByMemberName(memberDVO) == null){
             return false;
         }else{
             return true;
@@ -35,7 +36,7 @@ public class CoffeeMemberRestController {
         MemberDVO memberDVO = new MemberDVO();
         memberDVO.setMemberName(memberRVO.getMemberName());
 
-        if(iCoffeeMemberMapper.existsByMemberName(memberDVO).getMemberName().isEmpty()){
+        if(iCoffeeMemberMapper.existsByMemberName(memberDVO) == null){
             return false;
         }else{
             return true;

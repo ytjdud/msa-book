@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.springboot.messageq.KafkaProducer;
 
 @RestController
+@RequestMapping("/coffeeOrder")
 public class CoffeeOrderRestController {
     @Autowired
     private CoffeeOrderServiceImpl coffeeOrderServiceImpl;
@@ -37,7 +38,7 @@ public class CoffeeOrderRestController {
         coffeeOrderServiceImpl.coffeeOrder(coffeeOrderCVO);
 
         //kafka
-        kafkaProducer.send("seoyoung-kafka-test", coffeeOrderCVO);
+        kafkaProducer.send("msa-service-coffee-status", coffeeOrderCVO);
 
         return new ResponseEntity<CoffeeOrderCVO>(coffeeOrderCVO, HttpStatus.OK);
     }

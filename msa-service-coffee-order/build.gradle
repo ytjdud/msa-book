@@ -9,9 +9,12 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.0.2'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard:2.2.10.RELEASE'
 
     implementation 'org.springframework.kafka:spring-kafka'
+
     implementation 'com.h2database:h2'
+    implementation 'org.apache.kafka:kafka-clients:3.5.1'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
