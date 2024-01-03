@@ -8,9 +8,9 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @EnableConfigServer
 @EnableDiscoveryClient
 @SpringBootApplication
-public class MicroServiceApplication {
+public class MsaConfigServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MicroServiceApplication.class, args);
+        SpringApplication.run(MsaConfigServerApplication.class, args);
     }
 
 }
