@@ -14,7 +14,7 @@ public class CoffeeOrderRepository implements ICoffeeOrderRepository {
     private ICoffeeOrderJpaRepository iCoffeeOrderJpaRepository;
 
     @Override
-    public String coffeeOrderSave(OrderEntity orderEntity) {
+    public Long coffeeOrderSave(OrderEntity orderEntity) {
         OrderEntityJPO orderEntityJPO = new OrderEntityJPO();
         orderEntityJPO.setOrderNumber(orderEntity.getOrderNumber());
         orderEntityJPO.setCoffeeName(orderEntity.getCoffeeName());

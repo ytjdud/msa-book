@@ -25,8 +25,4 @@ public class OrderEntityJPO extends OrderEntity {
     String coffeeCount; //커피 개수
     String customerName; //회원명
 
-    @Override
-    public String getId() {
-        return String.valueOf(id); // Long 값을 String으로 변환하여 반환
-    }
 }
